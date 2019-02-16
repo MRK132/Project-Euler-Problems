@@ -9,20 +9,19 @@ public class Prob1 {
 
 	public static void main (String args[]) {
 		
-		sub5AndStoreAns();
-		sub3AndStoreAns();
-		sumOfThrees();
-		sumOfFives();
-			
+		sub5AndStoreAns();		// incrementally subtract 5 from 1000 and store results
+		sub3AndStoreAns();		// incrementally subtract 3 from 1000 and store results
+		sumOfThrees();			// get sum of all multiples of 3
+		sumOfFives();			// get sum of all multiples of 5
 		
 	}
 	
 	
 	
-	private static int sumOfFives() {
+	private static int sumOfFives() {	// sum all the multiples of 5 from the ArrayList 'fivesArray'
 		int sumOfFives = 0;
-		for (int i = 0; i < fivesArray.size(); i++) {
-			sumOfFives += fivesArray.get(i);
+		for (int i = 0; i < fivesArray.size(); i++) {		// for every element in fivesArray:
+			sumOfFives += fivesArray.get(i);				// retrieve and add on to sumOfFives, to get total sum
 		}
 		System.out.println("Sum of all multiples of 5 between but not including 0 and 1000:");
 		System.out.println(sumOfFives-1000);
@@ -32,11 +31,11 @@ public class Prob1 {
 
 
 
-	private static int sumOfThrees() {
+	private static int sumOfThrees() {	// sum all the multiples of 5 from the ArrayList 'threesArray'
 		
 		int sumOfThrees = 0;
-		for (int i = 0; i < threesArray.size(); i++) {
-			sumOfThrees += threesArray.get(i);
+		for (int i = 0; i < threesArray.size(); i++) {		// for every element in threesArray:
+			sumOfThrees += threesArray.get(i);				// retrieve and add on to sumOfThrees, to get total sum
 			//System.out.print(sumOfThrees);
 		}
 		System.out.println("Sum of all multiples of 3 between but not including 0 and 1000:");
@@ -47,25 +46,22 @@ public class Prob1 {
 
 
 	
-	static int fives_Holder;
-			
+	static int fives_Holder;		
 		
 	static ArrayList<Integer> fivesArray = new ArrayList<>();
 			
 	public static ArrayList<Integer> sub5AndStoreAns() {
 		
-		fives_Holder = 1005;
-		for (int j=0;j <= 200; j++) {
+		fives_Holder = 1005;				// Hold all the natural numbers that are multiples of 3 
+		for (int j=0;j <= 200; j++) {		// repeat 200 times: 1000/5 = 200
 			
-			fives_Holder = fives_Holder-5; 
-			fivesArray.add(fives_Holder);
+			fives_Holder = fives_Holder-5; 	// get each multiple of 5
+			fivesArray.add(fives_Holder);	// store each multiple of 5 in an ArrayList
 		}
 		
 		System.out.println(fivesArray);
 		return fivesArray;
-		
-		
-		
+			
 		
 	}
 	
@@ -76,10 +72,10 @@ public class Prob1 {
 	public static ArrayList<Integer> sub3AndStoreAns() {
 		
 		threes_Holder = 1002;			// Hold all the natural numbers that are multiples of 3 
-		for (int k=0;k <= 333; k++){		// do 333 times:  1000/3 = 333
+		for (int k=0;k <= 333; k++){		// repeat 333 times:  1000/3 = 333
 			
-			threes_Holder = threes_Holder-3;	//  get each multiple of 3
-			threesArray.add(threes_Holder);		// store each multiple of 3 in an Arraylist
+			threes_Holder = threes_Holder-3;	// get each multiple of 3
+			threesArray.add(threes_Holder);		// store each multiple of 3 in an ArrayList
 					
 		}
 		System.out.println(threesArray);
